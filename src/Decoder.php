@@ -78,18 +78,22 @@ class Decoder
      */
     public static function decode($source, $decodeType = Bencode::TYPE_ARRAY)
     {
-        if (!is_string($source)) {
-            throw new RuntimeException("Argument expected to be a string; Got " . gettype($source));
+        try {
+            if (!is_string($source)) {
+                throw new RuntimeException("Argument expected to be a string; Got " . gettype($source));
+            }
+
+            $decoder = new self($source, $decodeType);
+            $decoded = $decoder->doDecode();
+
+            if ($decoder->offset != $decoder->sourceLength) {
+                throw new RuntimeException("Found multiple entities outside list or dict definitions");
+            }
+
+            return $decoded;
+        } catch (Exception $e) {
+            throw new RuntimeException("Unexpected Error: " . $e->getMessage());
         }
-
-        $decoder = new self($source, $decodeType);
-        $decoded = $decoder->doDecode();
-
-        if ($decoder->offset != $decoder->sourceLength) {
-            throw new RuntimeException("Found multiple entities outside list or dict definitions");
-        }
-
-        return $decoded;
     }
 
     /**

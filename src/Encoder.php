@@ -12,6 +12,9 @@
 
 namespace Rych\Bencode;
 
+use Rych\Bencode\Exception\RuntimeException;
+
+
 /**
  * Bencode encoder class
  *
@@ -46,18 +49,22 @@ class Encoder
      */
     public static function encode($data)
     {
-        if (is_object($data)) {
-            if (method_exists($data, "toArray")) {
-                $data = $data->toArray();
-            } else {
-                $data = (array) $data;
+        try {
+            if (is_object($data)) {
+                if (method_exists($data, "toArray")) {
+                    $data = $data->toArray();
+                } else {
+                    $data = (array) $data;
+                }
             }
+
+            $encoder = new self($data);
+            $encoded = $encoder->doEncode();
+
+            return $encoded;
+        } catch (Exception $e) {
+            throw new RuntimeException("Unexpected Error: " . $e->getMessage());
         }
-
-        $encoder = new self($data);
-        $encoded = $encoder->doEncode();
-
-        return $encoded;
     }
 
     /**
