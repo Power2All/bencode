@@ -27,7 +27,7 @@ $ composer require rych/bencode
 ```php
 <?php
 
-use Rych\Bencode\Bencode;
+use Power2All\Bencode\Bencode;
 
 $data = array(
     "string" => "bar",
@@ -49,7 +49,7 @@ The above produces the string `d5:arrayl3:one3:two5:threee7:integeri42e6:string3
 ```php
 <?php
 
-use Rych\Bencode\Bencode;
+use Power2All\Bencode\Bencode;
 
 $string = "d5:arrayl3:one3:two5:threee7:integeri42e6:string3:bare";
 
