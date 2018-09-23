@@ -16,7 +16,7 @@ The format is primarily used in the .torrent file specification.
 Via Composer
 
 ``` bash
-$ composer require rych/bencode
+$ composer require power2all/bencode
 ```
 
 

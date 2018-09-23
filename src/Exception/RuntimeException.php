@@ -1,6 +1,6 @@
 <?php
 /**
- * Rych Bencode
+ * Power2All Bencode
  *
  * Bencode serializer for PHP 5.3+.
  *
