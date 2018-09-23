@@ -1,5 +1,5 @@
 {
-    "name": "rych/bencode",
+    "name": "power2all/bencode-fixed",
     "type": "library",
     "description": "Bencode serializer for PHP 5.3+",
     "keywords": ["bencode", "serialize"],
