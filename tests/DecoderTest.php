@@ -1,19 +1,19 @@
 <?php
 /**
- * Rych Bencode
+ * Power2All Bencode
  *
  * Bencode serializer for PHP 5.3+.
  *
- * @package   Rych\Bencode
- * @copyright Copyright (c) 2014, Ryan Chouinard
- * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @package   Power2All\Bencode
+ * @copyright Copyright (c) 2014, Ryan Chouinard, modded by Power2All
+ * @author    Ryan Chouinard <rchouinard@gmail.com>, Power2All <info@power2all.com>
  * @license   MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 
-namespace Rych\Bencode;
+namespace Power2All\Bencode;
 
 use PHPUnit_Framework_TestCase as TestCase;
-use Rych\Bencode\Exception\RuntimeException;
+use Power2All\Bencode\Exception\RuntimeException;
 
 /**
  * Bencode decoder test

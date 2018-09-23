@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Rych Bencode Test Suite">
+        <testsuite name="Power2All Bencode Test Suite">
             <directory suffix="Test.php">tests/</directory>
         </testsuite>
     </testsuites>
